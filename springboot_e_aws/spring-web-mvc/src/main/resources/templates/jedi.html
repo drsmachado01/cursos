@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}" />
+
+<h1>Jedi Force</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>NAME</th>
+        <th>LASTNAME</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="jedi : ${allJedi}">
+        <td th:text="${jedi.name}"> </td>
+        <td th:text="${jedi.lastName}"> </td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+
+<a href="#" th:href="@{/new-jedi}">New Jedi</a>
+</body>
+</html>
